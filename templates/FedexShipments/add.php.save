@@ -1,0 +1,81 @@
+<?php
+/**
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\FedexShipment $fedexShipment
+ */
+?>
+<?php $this->extend('/layout/TwitterBootstrap/dashboard'); ?>
+
+<?php $this->start('tb_actions'); ?>
+<li><?= $this->Html->link(__('List Fedex Shipments'), ['action' => 'index'], ['class' => 'nav-link']) ?></li>
+<?php $this->end(); ?>
+<?php $this->assign('tb_sidebar', '<ul class="nav flex-column">' . $this->fetch('tb_actions') . '</ul>'); ?>
+
+<div class="fedexShipments form content">
+    <?= $this->Form->create($fedexShipment) ?>
+    <fieldset>
+        <legend><?= __('Create New Shipment') ?></legend>
+
+	<div class="container">
+	    <p>
+  	        <a class="btn btn-primary" data-bs-toggle="collapse" href="#FromUs" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+  	        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#FromElsewhere" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+  	        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+	    </p>
+	        <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="FromUs">
+                            <div class="card card-body">
+        		       <div class="row">
+			    	<div class="col-md-12">
+				    <label for="from_company">
+					<h4>From CryoBuilt</h4>
+				    </label>
+				    <input type="text" id="from_company" name="from_company"  value="CryoBuilt Inc." />
+				</div>
+  			    </div>
+	
+			    <div class="row">
+				<div class="col-md-6">
+				    <label for="from_address">
+					<h4>Address</h4>
+				    </label
+				    <input type="text" id="from_address" name="from_address" value="1534 N Market Blvd #101" />
+			        </div>
+
+				<div class="col-md-6">
+			            <label for="from_city">
+				        <h4>City</h4>
+				    </label>
+			  	    <input type="text" id="from_city" name="from_city" value="Sacramento" />
+			        </div>
+			    </div>
+			    <div class="row">
+			        <div class="col-md-3">
+				    <label for="from_state">
+				        <h4>State</h4>
+				    </label>
+				    <input type="text" id="from_state" name="from_state" value="California" />
+			        </div>
+
+				<div class="col-md-3">
+				    <label for="from_zip">
+					<h4>Zipcode</h4>
+				    </label>
+				    <input type="text
+				
+      			    </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+      </div>
+    </div>
+  </div>
+</div>
+    </fieldset>
+    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->end() ?>
+</div>
